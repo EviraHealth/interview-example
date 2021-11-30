@@ -1,23 +1,28 @@
 import React from 'react'
 import Plot from 'react-plotly.js'
-import { getBmiSdsPlotData, getBmiSdsPlotDataSettings } from '../Storage/actions'
+import color from '../color'
 
 class Chart extends React.Component {
   constructor (props) {
     super(props)
 
-    const { layout = {} } = this.props
-
     const {
-      fullXRange: rangeSliderRange,
-      setXRange: xRange,
-      yRange,
-      xLabel,
-    } = getBmiSdsPlotDataSettings()
+      layout = {},
+      data = [],
+      settings: {
+        fullXRange: rangeSliderRange,
+        setXRange: xRange,
+        yRange,
+        xLabel,
+        yLabel,
+      },
+    } = this.props
 
     this.state = {
-      data: getBmiSdsPlotData(),
+      data,
       layout: Object.assign({
+        plot_bgcolor: color.chartBackground,
+        paper_bgcolor: color.chartPaper,
         showlegend: true,
         legend: {
           orientation: 'h',
@@ -25,7 +30,7 @@ class Chart extends React.Component {
           xanchor: 'left',
           x: 0.01,
           yanchor: 'top',
-          // bgcolor: addAlpha(COLOR.white, 'B0'),
+          bgcolor: color.chartLegend,
         },
         margin: {
           t: 20,
@@ -34,7 +39,6 @@ class Chart extends React.Component {
           l: 40,
           autoexpand: true,
         },
-        // plot_bgcolor: COLOR.darkWhite,
         font: {
           family: '"Noah", sans-serif',
           size: '11',
@@ -43,7 +47,7 @@ class Chart extends React.Component {
         yaxis: {
           automargin: true,
           title: {
-            text: 'THIS IS A CHART TITLE',
+            text: yLabel,
             standoff: 10,
           },
           showticklabels: true,
@@ -83,8 +87,6 @@ class Chart extends React.Component {
 
   render () {
     const { data, config, layout } = this.state
-
-    console.log('settings', data, config, layout)
 
     return (
       <Plot
