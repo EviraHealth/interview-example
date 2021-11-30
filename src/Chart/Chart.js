@@ -1,13 +1,12 @@
 import React from 'react'
 import Plot from 'react-plotly.js'
 import { getBmiSdsPlotData, getBmiSdsPlotDataSettings } from '../Storage/actions'
-import { setXRange } from '../Storage/BmiSdsPlotDataSettings'
 
 class Chart extends React.Component {
   constructor (props) {
     super(props)
 
-    const layout = {}
+    const { layout = {} } = this.props
 
     const {
       fullXRange: rangeSliderRange,
@@ -15,8 +14,6 @@ class Chart extends React.Component {
       yRange,
       xLabel,
     } = getBmiSdsPlotDataSettings()
-
-    console.log('chart constructor', setXRange, rangeSliderRange)
 
     this.state = {
       data: getBmiSdsPlotData(),
@@ -31,10 +28,10 @@ class Chart extends React.Component {
           // bgcolor: addAlpha(COLOR.white, 'B0'),
         },
         margin: {
-          // t: marginTop,
-          // b: marginBottom,
-          // r: marginRight,
-          // l: marginLeft,
+          t: 20,
+          b: 0,
+          r: 20,
+          l: 40,
           autoexpand: true,
         },
         // plot_bgcolor: COLOR.darkWhite,
@@ -72,7 +69,9 @@ class Chart extends React.Component {
         hoverdistance: 40,
         clickmode: 'event+select',
         autosize: true,
-      }, layout || {}),
+        width: 800,
+        height: 500,
+      }, layout),
       config: {
         displayModeBar: false,
         staticPlot: false,

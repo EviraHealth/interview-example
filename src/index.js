@@ -23,6 +23,7 @@ ReactDOM.render(
         style={{
           height: '10vmin',
           pointerEvents: 'none',
+          marginTop: '2vmin',
         }}
         alt='logo'
       />
@@ -36,8 +37,8 @@ ReactDOM.render(
           alignItems: 'center',
         }}
       >
-        <Chart />
-        <Chart />
+        <Chart layout={{ width: 800, height: 500 }} />
+        <Chart layout={{ width: 800, height: 500 }} />
       </div>
     </div>
   </React.StrictMode>,
