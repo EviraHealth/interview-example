@@ -8,7 +8,7 @@ You are encouraged to use the installed dependencies but you are allowed to inst
 
 ## Running the app
 
-The example is based on create-react-app and requires node. We recommend installing node version manager if you don't already have node installed.
+The example is based on create-react-app and requires node. We recommend installing node version manager if you don't already have node installed. If you use nvm, run `nvm use` to load the node version from the nvmrc file.
 
 You can start the page by running the following command: `yarn install && yarn start`. It should automatically launch in your web-browser but if it doesn't, you can open the page as instructed in the terminal.
 
