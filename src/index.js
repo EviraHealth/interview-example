@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
+import logo from './assets/logo.svg'
 import { backgroundGrey } from './color'
-import logo from './logo.svg'
 import reportWebVitals from './reportWebVitals'
 
 ReactDOM.render(
