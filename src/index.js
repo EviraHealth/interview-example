@@ -4,7 +4,6 @@ import './index.css'
 import logo from './assets/logo.png'
 import { backgroundGrey } from './color'
 import { Dashboard } from './Dashboard'
-import reportWebVitals from './reportWebVitals'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -32,5 +31,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root'),
 )
-
-reportWebVitals(console.log)

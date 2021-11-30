@@ -15,7 +15,7 @@ class Chart extends React.Component {
         yRange,
         xLabel,
         yLabel,
-      },
+      } = {},
     } = this.props
 
     this.state = {
@@ -60,7 +60,7 @@ class Chart extends React.Component {
           range: xRange ? [...xRange] : [],
           showgrid: false,
           showticklabels: true,
-          rangeslider: true && rangeSliderRange && {
+          rangeslider: rangeSliderRange && {
             range: rangeSliderRange,
           },
           automargin: true,
@@ -94,7 +94,6 @@ class Chart extends React.Component {
         config={config}
         layout={layout}
       />
-
     )
   }
 }

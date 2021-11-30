@@ -1,5 +1,6 @@
 import React from 'react'
 import { Chart } from '../Chart/Chart'
+import { LoadingChart } from '../LoadingChart.js'
 import { getBmiSdsPlotData, getBmiSdsPlotDataSettings } from '../Storage/actions'
 
 export const Dashboard = () => {
@@ -31,6 +32,7 @@ export const Dashboard = () => {
         data={plotData}
         layout={plotLayout}
       />
+      <LoadingChart />
     </div>
   )
 }
