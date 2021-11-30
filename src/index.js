@@ -1,35 +1,44 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import logo from './assets/logo.svg'
+import logo from './assets/logo.png'
 import { Chart } from './Chart/Chart'
 import { backgroundGrey } from './color'
 import reportWebVitals from './reportWebVitals'
 
 ReactDOM.render(
   <React.StrictMode>
-    <div>
-      <header
+    <div
+      style={{
+        backgroundColor: backgroundGrey,
+        display: 'flex',
+        height: '100vh',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      <img
+        src={logo}
         style={{
-          backgroundColor: backgroundGrey,
+          height: '10vmin',
+          pointerEvents: 'none',
+        }}
+        alt='logo'
+      />
+      <div
+        style={{
           display: 'flex',
-          height: '100vh',
-          flexDirection: 'column',
+          flex: 1,
+          width: '100%',
+          flexDirection: 'row',
+          justifyContent: 'space-evenly',
           alignItems: 'center',
-          justifyContent: 'center',
         }}
       >
-        <img
-          src={logo}
-          style={{
-            height: '40vmin',
-            pointerEvents: 'none',
-            animation: 'App-logo-spin infinite 20s linear',
-          }}
-          alt='logo'
-        />
         <Chart />
-      </header>
+        <Chart />
+      </div>
     </div>
   </React.StrictMode>,
   document.getElementById('root'),
