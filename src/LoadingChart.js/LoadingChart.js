@@ -35,11 +35,13 @@ export class LoadingChart extends Component {
     this.state = {
       data: undefined,
     }
-  }
 
-  handleButtonClick = () => {
     // Data is only fetched once, and then cached in the state. Make sure that the data isn't fetched
     // at each render.
+    this.loadData()
+  }
+
+  loadData = () => {
     fetch('https://data.cdc.gov/api/views/28df-2bwy/rows.json?accessType=DOWNLOAD')
       .then(response => response.json())
       .then(data => {
@@ -76,11 +78,6 @@ export class LoadingChart extends Component {
         }}
       >
         {data && <Chart data={data} layout={layout} />}
-        {!data && (
-          <Button
-            onClick={this.handleButtonClick}
-            text='Load obesity prevalence chart'
-          />)}
       </div>
     )
   }
