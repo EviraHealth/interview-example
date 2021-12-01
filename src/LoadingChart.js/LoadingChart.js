@@ -37,7 +37,7 @@ export class LoadingChart extends Component {
     }
   }
 
-  downloadAndPrepareData = () => {
+  handleButtonClick = () => {
     fetch('https://data.cdc.gov/api/views/28df-2bwy/rows.json?accessType=DOWNLOAD')
       .then(response => response.json())
       .then(data => {
@@ -73,7 +73,7 @@ export class LoadingChart extends Component {
         {data && <Chart data={data} />}
         {!data && (
           <Button
-            onClick={this.downloadAndPrepareData}
+            onClick={this.handleButtonClick}
             text='Load obesity prevalence chart'
           />)}
       </div>
