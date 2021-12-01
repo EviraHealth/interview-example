@@ -59,18 +59,21 @@ export class LoadingChart extends Component {
   render () {
     const { data } = this.state
 
+    const { layout } = this.props
+    const { width, height } = layout
+
     return (
       <div
         style={{
           backgroundColor: '#f5f5f5f5',
           display: 'flex',
-          width: 800,
-          height: 500,
+          width,
+          height,
           justifyContent: 'center',
           alignItems: 'center',
         }}
       >
-        {data && <Chart data={data} />}
+        {data && <Chart data={data} layout={layout} />}
         {!data && (
           <Button
             onClick={this.handleButtonClick}

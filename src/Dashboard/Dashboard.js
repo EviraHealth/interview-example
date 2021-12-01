@@ -12,8 +12,8 @@ export const Dashboard = () => {
   const plotData = getBmiSdsPlotData()
 
   const plotLayout = {
-    width: 800,
-    height: 500,
+    width: window.innerWidth * 0.4,
+    height: window.innerHeight * 0.5,
   }
 
   return (
@@ -32,7 +32,9 @@ export const Dashboard = () => {
         data={plotData}
         layout={plotLayout}
       />
-      <LoadingChart />
+      <LoadingChart
+        layout={plotLayout}
+      />
     </div>
   )
 }
