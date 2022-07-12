@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Chart } from '../Chart/Chart'
-import { Button } from '../Components'
 
 // The data used for this chart is a public data set from the CDC. It is available
 // for download at: https://data.cdc.gov/api/views/28df-2bwy/rows.json?accessType=DOWNLOAD
